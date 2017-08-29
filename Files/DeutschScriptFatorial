@@ -1,0 +1,44 @@
+$fatorial em DEUTSCH SCRIPT
+
+leer haupt [ ] <<
+
+    alle n , i , fat .
+
+    show [ #Entre n:# ] .
+
+    lesen [ n ] .
+
+    wenn [ n < 0 ] <<
+
+        show [ #Valor inválido!# ] .
+
+    >> sonst <<
+
+        fat <- 1 .
+        i <- 1 .
+
+        zum [ i <= n ] <<
+
+            fat <- fat * i .
+            i <- i + 1 .            
+        >>
+        
+        show [ #Resultado: # ] .
+        show [ fat ] .        
+    >>
+>>
+
+$     leer     ==     void
+$     alle     ==     int
+$     text     ==     string
+$    real    ==     real
+$    logisch    ==    boolean    
+
+$    haupt    ==     main
+$    show    ==    print
+$    lesen    ==    read
+
+$    wenn    ==    if
+$    sonst    ==    else
+$    zum    ==    while
+$    out    ==    return
