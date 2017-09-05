@@ -38,6 +38,7 @@ public class Token {
 	public void setColumn(Integer column) {
 		this.column = column;
 	}
+<<<<<<< HEAD
 	
 	@Override
 	public String toString() {
@@ -46,3 +47,7 @@ public class Token {
 			   ", Column: " + this.column;
 	}
 }
+=======
+
+}
+>>>>>>> 39aafc13f46fbcc32b3eebc34ff824a31a1c8de7
