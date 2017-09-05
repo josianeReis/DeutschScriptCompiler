@@ -1,24 +1,12 @@
 package lexicalAnalyzer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum EnumToken {
 
-	PR(new String[] {"leer", "haupt", "alle", "show", "lesen"}),
+	PR(new String[] {"leer", "haupt", "alle", "show", "lesen", "Text", "real", 
+					 "logisch", "wenn", "sonst", "zum", "out"}),
 	DE(new String[] {"[", "]", "<<", ">>", ",", "."}),
-	CL(new String[] {"0..9+", "[a-zA-Z][a-zA-Z0-9]*"});
-//	alle, //int 
-//	text, //string
-//	real, //real
-//	logisch, //boolean    
-//	haupt, //main
-//	show, //print
-//	lesen, //read
-//	wenn, //if
-//	sonst, //else
-//	zum, //while
-//	out; //return
+	CL(new String[] {"0..9+", "[a-zA-Z][a-zA-Z0-9]*"}),
+	OP(new String[] {"+", "-", "/", "*", "^", "<=", "<-", "<"});
 	
 	public String[] type;
 	

@@ -38,4 +38,11 @@ public class Token {
 	public void setColumn(Integer column) {
 		this.column = column;
 	}
+	
+	@Override
+	public String toString() {
+		return "Image: " + this.image + ", Classe: " + this.classId +
+			   ", Id: " + this.id + ", Line: " + this.line +
+			   ", Column: " + this.column;
+	}
 }
