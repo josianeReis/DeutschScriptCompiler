@@ -30,6 +30,7 @@ public class LexicalAnalyzer {
 //	}
 	
 	public List<Token> fileReader() throws IOException {
+
 		BufferedReader br = new BufferedReader(new FileReader("Files/DeutschScriptFatorial.txt"));
 		String line = br.readLine();
 		Token lexeme;

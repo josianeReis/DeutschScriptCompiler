@@ -27,9 +27,15 @@ leer haupt [ ] <<
 	>>
 >>
 
+<<<<<<< HEAD
 $    leer     ==     void          ok
 $    alle     ==     int           ok 
 $    text     ==     string        ok
+=======
+$     leer     ==     void          ok
+$     alle     ==     int           ok 
+$     text     ==     string        ok
+>>>>>>> ae6030cece63385c41c35b94dc8136525ad7bcf2
 $    real    ==     real            ok
 $    logisch    ==    boolean       ok
 
