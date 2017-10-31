@@ -1,0 +1,54 @@
+"Name"     = 'Enter the name of the grammar'
+"Author"   = 'Enter your name'
+"Version"  = 'The version of the grammar and/or language'
+"About"    = 'A short description of the grammar'
+
+"Start Symbol" = <funcs>
+
+! -------------------------------------------------
+! Character Sets
+! -------------------------------------------------
+
+{String Chars} = {Printable} + {HT} - [#]
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+id    = {Letter}{AlphaNumeric}*
+cls = '#' {String Chars}* '#'
+cli = {Digit}{Digit}*
+clr = {Digit}{Digit}* '.' {Digit}{Digit}*
+cll = 'T' | 'F'
+
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+
+! The grammar starts below
+           
+<funcs>    ::= <func> <funcs> | 
+<func>    ::= <tipo> id '[' <params> ']' '<<' <comans> '>>'      ok
+<tipo>    ::= 'alle' | 'leer' | 'text' | 'real' | 'logisch'      ok
+<params>  ::= <param> <params2> |                                ok
+<params2> ::= ',' <param> <params2> |
+<param>   ::= <tipo> id
+<comans>  ::= <coman> <comans> |
+<coman>   ::= <decl> '.' | <atrib> '.' | <leitura> '.' | <escrita> '.' | <cond> | <laco> | <retorno> '.' | <chamada> '.'
+<decl>    ::= <tipo> <ids>
+<ids>     ::= id <ids2>
+<ids2>    ::= ',' id <ids2> | 
+<atrib>   ::= id '<-' <exp>
+<exp>     ::= <operan> <exp2>
+<exp2>    ::=  | <op> <operan>
+<operan>  ::= id | cli | clr | cls | cll |  <chamada>
+<op>      ::= '+' | '-' | '*' | '/' | '&' | '|' | '>' | '<' | '>=' | '<=' | '=' | '<>' | '@'
+<leitura> ::= 'lessen' '[' id ']'
+<escrita> ::= 'show' '[' <exp> ']'
+<cond>    ::= 'wenn' '[' <exp> ']' '<<' <comans> '>>' <senao>
+<senao>   ::=  | 'sont' '<<' <comans> '>>'
+<laco>    ::= 'zum' '[' <exp> ']' '<<' <comans> '>>'
+<retorno> ::= 'out' <exp>
+<chamada> ::= id '[' <args> ']'
+<args>    ::=  | <operan> <args2>
+<args2>   ::=  | ',' <operan> <args2>
